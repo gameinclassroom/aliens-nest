@@ -2874,15 +2874,7 @@
 
 		function $() {
 			var e, t = (null === (e = null === window || void 0 === window ? void 0 : window.location) || void 0 === e ? void 0 : e.hostname) || "";
-			console.log("DEBUG: Domain detected:", t);
-			// Add GitHub Pages domains to whitelist - return false to prevent Poki ad server redirect
-			if (t.endsWith(".github.io") || t === "ucbg.github.io") {
-				console.log("DEBUG: GitHub Pages domain detected - Poki ad server will NOT be used");
-				return false;
-			}
-			var usePokiAdserver = "yes" === I("poki-ad-server") ? (console.log("DEBUG: Only running Poki-ad-server"), !0) : "localhost" !== t && "game-cdn.poki.com" !== t && !t.endsWith(".poki-gdn.com") && ("ninja.io" === t ? Math.random() <= .5 : "venge.io" === t ? Math.random() <= .05 : "makeitmeme.com" === t);
-			console.log("DEBUG: Poki ad server will be used:", usePokiAdserver);
-			return usePokiAdserver;
+			return "yes" === I("poki-ad-server") ? (console.log("DEBUG: Only running Poki-ad-server"), !0) : "localhost" !== t && "game-cdn.poki.com" !== t && !t.endsWith(".poki-gdn.com") && ("ninja.io" === t ? Math.random() <= .5 : "venge.io" === t ? Math.random() <= .05 : "makeitmeme.com" === t)
 		}
 		var ee = function() {
 			function e(e, t) {
